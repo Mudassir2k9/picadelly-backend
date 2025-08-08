@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_about_sliding_texts",
+  "info": {
+    "displayName": "slidingText"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

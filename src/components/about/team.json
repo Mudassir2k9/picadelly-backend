@@ -1,0 +1,60 @@
+{
+  "collectionName": "components_about_teams",
+  "info": {
+    "displayName": "Team"
+  },
+  "options": {},
+  "attributes": {
+    "LeftImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "RightImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "FirstName": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "Portfolio": {
+      "type": "string"
+    },
+    "TagLine": {
+      "type": "text"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Contact": {
+      "type": "component",
+      "component": "footer.social-link",
+      "repeatable": true
+    },
+    "ProfileImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

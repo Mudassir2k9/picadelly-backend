@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_home_results_lists",
+  "info": {
+    "displayName": "Results-List"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "View_Button_Label": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Case_Study_Link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

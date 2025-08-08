@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news",
+  "info": {
+    "singularName": "new",
+    "pluralName": "news",
+    "displayName": "News"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "News": {
+      "type": "component",
+      "component": "news.all-news",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_buzz_awards",
+  "info": {
+    "displayName": "Awards"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "All_Awards": {
+      "type": "component",
+      "component": "buzz.awards-list",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_footer_sub_links",
+  "info": {
+    "displayName": "subLinks"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

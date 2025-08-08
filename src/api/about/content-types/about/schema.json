@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MainHeading1": {
+      "type": "string"
+    },
+    "MainHeading2": {
+      "type": "string"
+    },
+    "Section2": {
+      "type": "component",
+      "component": "about.section2",
+      "repeatable": false
+    },
+    "TeamSectionHeading": {
+      "type": "text"
+    },
+    "TeamSectionDescription": {
+      "type": "text"
+    },
+    "PicadellyTeam": {
+      "type": "component",
+      "component": "about.team",
+      "repeatable": true
+    },
+    "InfoHeading1": {
+      "type": "string"
+    },
+    "InfoDescription1": {
+      "type": "text"
+    },
+    "InfoHeading2": {
+      "type": "string"
+    },
+    "InfoDescription2": {
+      "type": "text"
+    },
+    "ImagesSlider": {
+      "type": "component",
+      "component": "about.slider",
+      "repeatable": false
+    }
+  }
+}

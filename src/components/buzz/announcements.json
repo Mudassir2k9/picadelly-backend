@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_buzz_announcements",
+  "info": {
+    "displayName": "Announcements"
+  },
+  "options": {},
+  "attributes": {
+    "Heading1": {
+      "type": "string"
+    },
+    "Heading2": {
+      "type": "text"
+    },
+    "Announcement_Description_1": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Announcement_Description_2": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_work_work_histories",
+  "info": {
+    "displayName": "Work-History"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "Category": {
+      "type": "string"
+    },
+    "Company_Tagline": {
+      "type": "text"
+    },
+    "Results": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ButtonLabel": {
+      "type": "string"
+    },
+    "ButtonUrl": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

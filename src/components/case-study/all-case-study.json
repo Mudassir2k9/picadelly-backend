@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_case_study_all_case_studies",
+  "info": {
+    "displayName": "All-Case-Study"
+  },
+  "options": {},
+  "attributes": {
+    "Heading1": {
+      "type": "text"
+    },
+    "Heading2": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Channels": {
+      "type": "component",
+      "component": "case-study.channels",
+      "repeatable": true
+    },
+    "Integrated_Services": {
+      "type": "component",
+      "component": "case-study.integrated-services",
+      "repeatable": true
+    },
+    "Content": {
+      "type": "component",
+      "component": "case-study.content",
+      "repeatable": false
+    },
+    "Projects": {
+      "type": "component",
+      "component": "case-study.study-blocks",
+      "repeatable": true
+    },
+    "Case_Study_Media": {
+      "type": "component",
+      "component": "case-study.case-study-media",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_section2s",
+  "info": {
+    "displayName": "Section2"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "text"
+    },
+    "slidingText": {
+      "type": "component",
+      "component": "about.sliding-text",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

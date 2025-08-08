@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_talent_on_demand_stories",
+  "info": {
+    "displayName": "Stories"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "text"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "All_Stories": {
+      "type": "component",
+      "component": "talent-on-demand.all-stories",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

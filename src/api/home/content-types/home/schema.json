@@ -1,0 +1,44 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mainHeading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Section2_Heading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Results": {
+      "type": "component",
+      "component": "home.results",
+      "repeatable": false
+    },
+    "Slider": {
+      "type": "component",
+      "component": "home.slider",
+      "repeatable": true
+    },
+    "Whats_Happening": {
+      "type": "component",
+      "component": "home.whats-happening",
+      "repeatable": false
+    }
+  }
+}

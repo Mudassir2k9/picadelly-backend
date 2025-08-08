@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "buzzes",
+  "info": {
+    "singularName": "buzz",
+    "pluralName": "buzzes",
+    "displayName": "Buzz"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "BannerHeading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Announcement": {
+      "type": "component",
+      "component": "buzz.announcements",
+      "repeatable": false
+    },
+    "Team_Action": {
+      "type": "component",
+      "component": "buzz.team-action",
+      "repeatable": false
+    },
+    "Awards": {
+      "type": "component",
+      "component": "buzz.awards",
+      "repeatable": false
+    }
+  }
+}

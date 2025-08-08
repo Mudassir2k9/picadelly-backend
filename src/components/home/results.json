@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_home_results",
+  "info": {
+    "displayName": "Results"
+  },
+  "options": {},
+  "attributes": {
+    "Left_Column_Heading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Results_List": {
+      "type": "component",
+      "component": "home.results-list",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

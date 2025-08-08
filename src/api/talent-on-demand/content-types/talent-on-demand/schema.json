@@ -1,0 +1,77 @@
+{
+  "kind": "singleType",
+  "collectionName": "talent_on_demands",
+  "info": {
+    "singularName": "talent-on-demand",
+    "pluralName": "talent-on-demands",
+    "displayName": "Talent On Demand"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "BannerHeading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Section2Heading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Section2Description": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Services": {
+      "type": "component",
+      "component": "talent-on-demand.all-services",
+      "repeatable": false
+    },
+    "FAQs": {
+      "type": "component",
+      "component": "talent-on-demand.faq-section",
+      "repeatable": false
+    },
+    "Section5": {
+      "type": "component",
+      "component": "talent-on-demand.section5",
+      "repeatable": false
+    },
+    "Brand_Section_Heading": {
+      "type": "string"
+    },
+    "Brand_Section_Description": {
+      "type": "text"
+    },
+    "Brands_Images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Testimonials": {
+      "type": "component",
+      "component": "talent-executive.section6",
+      "repeatable": false
+    },
+    "Stories": {
+      "type": "component",
+      "component": "talent-on-demand.stories",
+      "repeatable": false
+    }
+  }
+}

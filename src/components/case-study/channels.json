@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_case_study_channels",
+  "info": {
+    "displayName": "Channels"
+  },
+  "options": {},
+  "attributes": {
+    "Channel": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

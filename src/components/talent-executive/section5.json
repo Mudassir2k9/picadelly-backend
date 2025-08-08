@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_talent_executive_section5s",
+  "info": {
+    "displayName": "Section5"
+  },
+  "options": {},
+  "attributes": {
+    "Column1_Heading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Column1_Description": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Column2_Heading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Column2_Description": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Column2_Button_Label": {
+      "type": "string"
+    },
+    "Column2_Button_URL": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

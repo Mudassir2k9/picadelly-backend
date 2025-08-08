@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_home_happening_lists",
+  "info": {
+    "displayName": "Happening -List"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Happening_List": {
+      "type": "component",
+      "component": "home.happening-data",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

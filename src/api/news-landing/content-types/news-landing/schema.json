@@ -1,0 +1,62 @@
+{
+  "kind": "singleType",
+  "collectionName": "news_landings",
+  "info": {
+    "singularName": "news-landing",
+    "pluralName": "news-landings",
+    "displayName": "News Landing"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "BannerHeading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Section2_Left_Column_Heading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Section2_Left_Column_Description": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Section2_Left_Column_Button_Label": {
+      "type": "string"
+    },
+    "Section2_Left_Column_Button_URL": {
+      "type": "string"
+    },
+    "Section2_Right_Column_Heading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Section2_Right_Column_Background_Color_Code": {
+      "type": "string"
+    },
+    "Section2_Right_Column_Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

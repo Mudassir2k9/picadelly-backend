@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_talent_on_demand_faq_sections",
+  "info": {
+    "displayName": "FAQ-Section"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Description": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "FAQ": {
+      "type": "component",
+      "component": "talent-on-demand.fa-qs",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

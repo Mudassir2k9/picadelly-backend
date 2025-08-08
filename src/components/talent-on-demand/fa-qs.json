@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_talent_on_demand_fa_qs",
+  "info": {
+    "displayName": "FAQs"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

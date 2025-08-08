@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_home_happening_data",
+  "info": {
+    "displayName": "Happening-Data"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "link": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

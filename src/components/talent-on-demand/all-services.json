@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_talent_on_demand_all_services",
+  "info": {
+    "displayName": "AllServices"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "ServicesName": {
+      "type": "component",
+      "component": "service.service-name",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

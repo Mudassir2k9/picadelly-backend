@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_case_study_contents",
+  "info": {
+    "displayName": "Content"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "situationTitle": {
+      "type": "string"
+    },
+    "situationText": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "approachTitle": {
+      "type": "string"
+    },
+    "approachText": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "outcomeTitle": {
+      "type": "string"
+    },
+    "outcomeText": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Stats": {
+      "type": "component",
+      "component": "case-study.stats",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

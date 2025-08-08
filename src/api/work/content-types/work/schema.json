@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "works",
+  "info": {
+    "singularName": "work",
+    "pluralName": "works",
+    "displayName": "Work"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "BannerHeading": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Work_History": {
+      "type": "component",
+      "component": "work.work-history",
+      "repeatable": true
+    },
+    "Testimonials": {
+      "type": "component",
+      "component": "talent-executive.section6",
+      "repeatable": false
+    }
+  }
+}

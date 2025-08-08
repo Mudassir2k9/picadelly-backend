@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_talent_on_demand_all_stories",
+  "info": {
+    "displayName": "All-Stories"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Description_1": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Description_2": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "Link_label": {
+      "type": "string"
+    },
+    "Link_URL": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

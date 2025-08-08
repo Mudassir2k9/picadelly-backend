@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_case_study_integrated_services",
+  "info": {
+    "displayName": "Integrated-Services"
+  },
+  "options": {},
+  "attributes": {
+    "Service": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

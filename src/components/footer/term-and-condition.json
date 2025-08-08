@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_footer_term_and_conditions",
+  "info": {
+    "displayName": "term-and-condition"
+  },
+  "options": {},
+  "attributes": {
+    "copyright": {
+      "type": "string"
+    },
+    "pages": {
+      "type": "component",
+      "component": "footer.sub-links",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
