@@ -26,6 +26,18 @@
     },
     "buttonUrl": {
       "type": "string"
+    },
+    "DetailDescription": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      }
+    },
+    "FAQs": {
+      "type": "component",
+      "component": "service.faq-section",
+      "repeatable": true
     }
   },
   "config": {}

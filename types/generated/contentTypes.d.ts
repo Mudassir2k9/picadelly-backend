@@ -397,9 +397,11 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     MainHeading1: Schema.Attribute.String;
     MainHeading2: Schema.Attribute.String;
+    PageTitle: Schema.Attribute.String;
     PicadellyTeam: Schema.Attribute.Component<'about.team', true>;
     publishedAt: Schema.Attribute.DateTime;
     Section2: Schema.Attribute.Component<'about.section2', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     TeamSectionDescription: Schema.Attribute.Text;
     TeamSectionHeading: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
@@ -419,14 +421,16 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    Blogs: Schema.Attribute.Component<'blog.blog-content', true>;
+    Blogs: Schema.Attribute.Component<'blog.blog-content', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
+    PageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -459,7 +463,9 @@ export interface ApiBuzzBuzz extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::buzz.buzz'> &
       Schema.Attribute.Private;
+    PageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     Team_Action: Schema.Attribute.Component<'buzz.team-action', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -467,7 +473,7 @@ export interface ApiBuzzBuzz extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiCaseStudyCaseStudy extends Struct.SingleTypeSchema {
+export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
   collectionName: 'case_studies';
   info: {
     displayName: 'Case Study';
@@ -478,7 +484,7 @@ export interface ApiCaseStudyCaseStudy extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    CaseStudy: Schema.Attribute.Component<'case-study.all-case-study', true>;
+    CaseStudy: Schema.Attribute.Component<'case-study.all-case-study', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -488,7 +494,123 @@ export interface ApiCaseStudyCaseStudy extends Struct.SingleTypeSchema {
       'api::case-study.case-study'
     > &
       Schema.Attribute.Private;
+    PageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
+  collectionName: 'categories';
+  info: {
+    displayName: 'Category';
+    pluralName: 'categories';
+    singularName: 'category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactFormContactForm extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_forms';
+  info: {
+    displayName: 'Contact Form';
+    pluralName: 'contact-forms';
+    singularName: 'contact-form';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    company: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-form.contact-form'
+    > &
+      Schema.Attribute.Private;
+    message: Schema.Attribute.Text;
+    name: Schema.Attribute.Text;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
+  collectionName: 'contact_uses';
+  info: {
+    displayName: 'Contact us';
+    pluralName: 'contact-uses';
+    singularName: 'contact-us';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    Contact_Heading: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Email: Schema.Attribute.Email;
+    Form_Description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    Form_Heading: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    Heading: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-us.contact-us'
+    > &
+      Schema.Attribute.Private;
+    Locations: Schema.Attribute.Component<'contact-us.location', false>;
+    PageTitle: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -576,6 +698,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    Company: Schema.Attribute.Component<'home.company', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -589,6 +712,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
           preset: 'defaultHtml';
         }
       >;
+    PageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Results: Schema.Attribute.Component<'home.results', false>;
     Section2_Heading: Schema.Attribute.RichText &
@@ -598,11 +722,44 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
           preset: 'defaultHtml';
         }
       >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     Slider: Schema.Attribute.Component<'home.slider', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Whats_Happening: Schema.Attribute.Component<'home.whats-happening', false>;
+  };
+}
+
+export interface ApiLegalLegal extends Struct.SingleTypeSchema {
+  collectionName: 'legals';
+  info: {
+    displayName: 'Legal';
+    pluralName: 'legals';
+    singularName: 'legal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    legal: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::legal.legal'> &
+      Schema.Attribute.Private;
+    PageTitle: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -623,8 +780,10 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::new.new'> &
       Schema.Attribute.Private;
-    News: Schema.Attribute.Component<'news.all-news', true>;
+    News: Schema.Attribute.Component<'news.all-news', false>;
+    PageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -658,6 +817,7 @@ export interface ApiNewsLandingNewsLanding extends Struct.SingleTypeSchema {
       'api::news-landing.news-landing'
     > &
       Schema.Attribute.Private;
+    PageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Section2_Left_Column_Button_Label: Schema.Attribute.String;
     Section2_Left_Column_Button_URL: Schema.Attribute.String;
@@ -686,6 +846,42 @@ export interface ApiNewsLandingNewsLanding extends Struct.SingleTypeSchema {
     Section2_Right_Column_Image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
+  collectionName: 'privacy_policies';
+  info: {
+    displayName: 'Privacy Policy';
+    pluralName: 'privacy-policies';
+    singularName: 'privacy-policy';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacy-policy.privacy-policy'
+    > &
+      Schema.Attribute.Private;
+    PageTitle: Schema.Attribute.String;
+    privacy_policy: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -720,6 +916,7 @@ export interface ApiServiceService extends Struct.SingleTypeSchema {
       'api::service.service'
     > &
       Schema.Attribute.Private;
+    PageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Section2_Heading: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
@@ -728,6 +925,7 @@ export interface ApiServiceService extends Struct.SingleTypeSchema {
           preset: 'defaultHtml';
         }
       >;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     Slider: Schema.Attribute.Component<'service.slider', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -763,6 +961,7 @@ export interface ApiTalentExecutiveTalentExecutive
       'api::talent-executive.talent-executive'
     > &
       Schema.Attribute.Private;
+    PageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Section2Description: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
@@ -800,6 +999,7 @@ export interface ApiTalentExecutiveTalentExecutive
         }
       >;
     Section5: Schema.Attribute.Component<'talent-executive.section5', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     Testimonial: Schema.Attribute.Component<'talent-executive.section6', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -842,6 +1042,7 @@ export interface ApiTalentOnDemandTalentOnDemand
       'api::talent-on-demand.talent-on-demand'
     > &
       Schema.Attribute.Private;
+    PageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Section2Description: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
@@ -858,6 +1059,7 @@ export interface ApiTalentOnDemandTalentOnDemand
         }
       >;
     Section5: Schema.Attribute.Component<'talent-on-demand.section5', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     Services: Schema.Attribute.Component<
       'talent-on-demand.all-services',
       false
@@ -897,7 +1099,11 @@ export interface ApiWorkWork extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::work.work'> &
       Schema.Attribute.Private;
+    PageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    Results: Schema.Attribute.Component<'home.results', false>;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    Slider: Schema.Attribute.Component<'service.slider', true>;
     Testimonials: Schema.Attribute.Component<
       'talent-executive.section6',
       false
@@ -1422,11 +1628,16 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::buzz.buzz': ApiBuzzBuzz;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
+      'api::category.category': ApiCategoryCategory;
+      'api::contact-form.contact-form': ApiContactFormContactForm;
+      'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::home.home': ApiHomeHome;
+      'api::legal.legal': ApiLegalLegal;
       'api::new.new': ApiNewNew;
       'api::news-landing.news-landing': ApiNewsLandingNewsLanding;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::service.service': ApiServiceService;
       'api::talent-executive.talent-executive': ApiTalentExecutiveTalentExecutive;
       'api::talent-on-demand.talent-on-demand': ApiTalentOnDemandTalentOnDemand;

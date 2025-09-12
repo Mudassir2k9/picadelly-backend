@@ -39,6 +39,19 @@
       "type": "component",
       "component": "home.whats-happening",
       "repeatable": false
+    },
+    "Company": {
+      "type": "component",
+      "component": "home.company",
+      "repeatable": false
+    },
+    "PageTitle": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

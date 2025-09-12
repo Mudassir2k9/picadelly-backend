@@ -14,7 +14,15 @@
     "Blogs": {
       "type": "component",
       "component": "blog.blog-content",
-      "repeatable": true
+      "repeatable": false
+    },
+    "PageTitle": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

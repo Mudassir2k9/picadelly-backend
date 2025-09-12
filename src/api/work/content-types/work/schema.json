@@ -27,6 +27,24 @@
       "type": "component",
       "component": "talent-executive.section6",
       "repeatable": false
+    },
+    "Slider": {
+      "type": "component",
+      "component": "service.slider",
+      "repeatable": true
+    },
+    "Results": {
+      "type": "component",
+      "component": "home.results",
+      "repeatable": false
+    },
+    "PageTitle": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

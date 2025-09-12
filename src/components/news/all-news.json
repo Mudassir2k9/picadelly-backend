@@ -6,21 +6,10 @@
   "options": {},
   "attributes": {
     "Title": {
-      "type": "customField",
-      "customField": "plugin::ckeditor5.CKEditor",
-      "options": {
-        "preset": "defaultHtml"
-      }
-    },
-    "Category": {
-      "type": "string"
+      "type": "text"
     },
     "Tag_Line": {
-      "type": "customField",
-      "customField": "plugin::ckeditor5.CKEditor",
-      "options": {
-        "preset": "defaultHtml"
-      }
+      "type": "text"
     },
     "Feature_Image": {
       "type": "media",
@@ -55,6 +44,11 @@
       "options": {
         "preset": "defaultHtml"
       }
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
     }
   },
   "config": {}

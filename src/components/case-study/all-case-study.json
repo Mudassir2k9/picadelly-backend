@@ -39,6 +39,16 @@
       "type": "component",
       "component": "case-study.case-study-media",
       "repeatable": false
+    },
+    "BannerImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   },
   "config": {}

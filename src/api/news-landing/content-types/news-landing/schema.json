@@ -57,6 +57,14 @@
         "videos",
         "audios"
       ]
+    },
+    "PageTitle": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

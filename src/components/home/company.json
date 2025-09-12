@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_home_companies",
+  "info": {
+    "displayName": "Company"
+  },
+  "options": {},
+  "attributes": {
+    "Left_Column_Heading": {
+      "type": "text"
+    },
+    "Right_Column_Heading": {
+      "type": "text"
+    },
+    "Logos": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

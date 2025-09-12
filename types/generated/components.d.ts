@@ -65,6 +65,10 @@ export interface BlogBlogContent extends Struct.ComponentSchema {
     Blog_Content: Schema.Attribute.Component<'blog.content', true>;
     Blog_Title_1: Schema.Attribute.Text;
     Blog_Title_2: Schema.Attribute.Text;
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    Feature_Image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     Header_Image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
@@ -171,6 +175,9 @@ export interface CaseStudyAllCaseStudy extends Struct.ComponentSchema {
     displayName: 'All-Case-Study';
   };
   attributes: {
+    BannerImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     Case_Study_Media: Schema.Attribute.Component<
       'case-study.case-study-media',
       false
@@ -298,6 +305,17 @@ export interface CaseStudyStudyBlocks extends Struct.ComponentSchema {
   };
 }
 
+export interface ContactUsLocation extends Struct.ComponentSchema {
+  collectionName: 'components_contact_us_locations';
+  info: {
+    displayName: 'Location';
+  };
+  attributes: {
+    all_locations: Schema.Attribute.Component<'footer.location', true>;
+    Heading: Schema.Attribute.Text;
+  };
+}
+
 export interface FooterAddress extends Struct.ComponentSchema {
   collectionName: 'components_footer_addresses';
   info: {
@@ -319,6 +337,7 @@ export interface FooterLink extends Struct.ComponentSchema {
   attributes: {
     subTitle: Schema.Attribute.Component<'footer.sub-links', true>;
     title: Schema.Attribute.String;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -329,6 +348,7 @@ export interface FooterLocation extends Struct.ComponentSchema {
   };
   attributes: {
     address: Schema.Attribute.Component<'footer.address', true>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
   };
 }
@@ -396,6 +416,21 @@ export interface HeaderSubmenus extends Struct.ComponentSchema {
   attributes: {
     title: Schema.Attribute.String;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface HomeCompany extends Struct.ComponentSchema {
+  collectionName: 'components_home_companies';
+  info: {
+    displayName: 'Company';
+  };
+  attributes: {
+    Left_Column_Heading: Schema.Attribute.Text;
+    Logos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    Right_Column_Heading: Schema.Attribute.Text;
   };
 }
 
@@ -535,7 +570,7 @@ export interface NewsAllNews extends Struct.ComponentSchema {
     Banner_Image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    Category: Schema.Attribute.String;
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
     Description: Schema.Attribute.RichText &
       Schema.Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
@@ -553,20 +588,8 @@ export interface NewsAllNews extends Struct.ComponentSchema {
     Feature_Image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    Tag_Line: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'defaultHtml';
-        }
-      >;
-    Title: Schema.Attribute.RichText &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'defaultHtml';
-        }
-      >;
+    Tag_Line: Schema.Attribute.Text;
+    Title: Schema.Attribute.Text;
   };
 }
 
@@ -582,6 +605,23 @@ export interface ServiceAllServices extends Struct.ComponentSchema {
   };
 }
 
+export interface ServiceFaqSection extends Struct.ComponentSchema {
+  collectionName: 'components_service_faq_sections';
+  info: {
+    displayName: 'FAQ-Section';
+  };
+  attributes: {
+    Description: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface ServiceServiceName extends Struct.ComponentSchema {
   collectionName: 'components_service_service_names';
   info: {
@@ -591,6 +631,14 @@ export interface ServiceServiceName extends Struct.ComponentSchema {
     buttonLabel: Schema.Attribute.String;
     buttonUrl: Schema.Attribute.String;
     description: Schema.Attribute.Text;
+    DetailDescription: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    FAQs: Schema.Attribute.Component<'service.faq-section', true>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
   };
@@ -608,6 +656,57 @@ export interface ServiceSlider extends Struct.ComponentSchema {
     Heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Slider_Color_Code: Schema.Attribute.String;
+  };
+}
+
+export interface SharedOpenGraph extends Struct.ComponentSchema {
+  collectionName: 'components_shared_open_graphs';
+  info: {
+    displayName: 'openGraph';
+    icon: 'project-diagram';
+  };
+  attributes: {
+    ogDescription: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    ogImage: Schema.Attribute.Media<'images'>;
+    ogTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 70;
+      }>;
+    ogType: Schema.Attribute.String;
+    ogUrl: Schema.Attribute.String;
+  };
+}
+
+export interface SharedSeo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seos';
+  info: {
+    displayName: 'seo';
+    icon: 'search';
+  };
+  attributes: {
+    canonicalURL: Schema.Attribute.String;
+    keywords: Schema.Attribute.Text;
+    metaDescription: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+        minLength: 50;
+      }>;
+    metaImage: Schema.Attribute.Media<'images'>;
+    metaRobots: Schema.Attribute.String;
+    metaTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    metaViewport: Schema.Attribute.String;
+    openGraph: Schema.Attribute.Component<'shared.open-graph', false>;
+    structuredData: Schema.Attribute.JSON;
   };
 }
 
@@ -845,6 +944,7 @@ declare module '@strapi/strapi' {
       'case-study.integrated-services': CaseStudyIntegratedServices;
       'case-study.stats': CaseStudyStats;
       'case-study.study-blocks': CaseStudyStudyBlocks;
+      'contact-us.location': ContactUsLocation;
       'footer.address': FooterAddress;
       'footer.link': FooterLink;
       'footer.location': FooterLocation;
@@ -853,6 +953,7 @@ declare module '@strapi/strapi' {
       'footer.term-and-condition': FooterTermAndCondition;
       'header.menu-item': HeaderMenuItem;
       'header.submenus': HeaderSubmenus;
+      'home.company': HomeCompany;
       'home.happening-data': HomeHappeningData;
       'home.happening-list': HomeHappeningList;
       'home.results': HomeResults;
@@ -861,8 +962,11 @@ declare module '@strapi/strapi' {
       'home.whats-happening': HomeWhatsHappening;
       'news.all-news': NewsAllNews;
       'service.all-services': ServiceAllServices;
+      'service.faq-section': ServiceFaqSection;
       'service.service-name': ServiceServiceName;
       'service.slider': ServiceSlider;
+      'shared.open-graph': SharedOpenGraph;
+      'shared.seo': SharedSeo;
       'talent-executive.section5': TalentExecutiveSection5;
       'talent-executive.section6': TalentExecutiveSection6;
       'talent-executive.testimonial': TalentExecutiveTestimonial;

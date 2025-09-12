@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_contact_us_locations",
+  "info": {
+    "displayName": "Location"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "text"
+    },
+    "all_locations": {
+      "type": "component",
+      "component": "footer.location",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

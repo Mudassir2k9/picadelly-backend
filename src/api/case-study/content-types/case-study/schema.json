@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "case_studies",
   "info": {
     "singularName": "case-study",
@@ -14,7 +14,15 @@
     "CaseStudy": {
       "type": "component",
       "component": "case-study.all-case-study",
-      "repeatable": true
+      "repeatable": false
+    },
+    "PageTitle": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

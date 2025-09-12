@@ -14,7 +14,15 @@
     "News": {
       "type": "component",
       "component": "news.all-news",
-      "repeatable": true
+      "repeatable": false
+    },
+    "PageTitle": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }
