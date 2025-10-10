@@ -4,14 +4,13 @@ module.exports = {
       name: 'backend',
       cwd: '/var/www/picadelly-backend',
       script: 'yarn',
-      args: 'start',
+      args: process.env.NODE_ENV === 'development' ? 'develop' : 'start',
       env: {
-        NODE_ENV: 'production'
-      },
-      env_development: {
         NODE_ENV: 'development',
-        args: 'develop'
-      }
-    }
-  ]
-}
+      },
+      env_production: {
+        NODE_ENV: 'production',
+      },
+    },
+  ],
+};

@@ -431,6 +431,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     PageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
+    slug: Schema.Attribute.UID<'PageTitle'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -497,6 +498,7 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
     PageTitle: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
+    slug: Schema.Attribute.UID<'PageTitle'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -535,7 +537,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
 export interface ApiContactFormContactForm extends Struct.CollectionTypeSchema {
   collectionName: 'contact_forms';
   info: {
-    displayName: 'Contact Form';
+    displayName: 'Contract Entries';
     pluralName: 'contact-forms';
     singularName: 'contact-form';
   };

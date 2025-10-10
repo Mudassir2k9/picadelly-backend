@@ -23,6 +23,10 @@
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "PageTitle"
     }
   }
 }

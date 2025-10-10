@@ -19,6 +19,7 @@
     "@strapi/plugin-cloud": "5.19.0",
     "@strapi/plugin-seo": "^2.0.8",
     "@strapi/plugin-users-permissions": "5.19.0",
+    "@strapi/provider-email-nodemailer": "^5.23.4",
     "@strapi/strapi": "5.19.0",
     "mysql2": "3.9.8",
     "react": "^18.0.0",
