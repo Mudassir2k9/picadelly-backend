@@ -1,6 +1,5 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy Node.js app to Azure Web App - asp-piccadilly-prod-www
 
 on:
@@ -53,3 +52,4 @@ jobs:
           slot-name: 'tmp'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5D370C8B88FC4F939082DAAC7A38A36B }}
+
