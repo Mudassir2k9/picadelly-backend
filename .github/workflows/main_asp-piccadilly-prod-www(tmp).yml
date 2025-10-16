@@ -1,31 +1,39 @@
-name: deploy-strapi
+name: Deploy Strapi to Azure Web App
 on:
   push:
-    branches: [ main ] 
+    branches: [ main ]
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     defaults:
       run:
-        working-directory: picadelly-backend   
+        working-directory: picadelly-backend   # 👈 Your Strapi folder
+
     steps:
+      # 🧾 Step 1: Checkout repository
       - uses: actions/checkout@v4
 
+      # 🟢 Step 2: Set up Node.js
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: backend/package-lock.json
+          cache-dependency-path: picadelly-backend/package-lock.json
 
-      - run: npm ci
-      - run: npm run build
-      - run: npm rebuild sharp --platform=linux --arch=x64 || true
+      # 🧰 Step 3: Install dependencies and build Strapi
+      - run: |
+          npm ci
+          npm run build
+          npm rebuild sharp --platform=linux --arch=x64 || true
 
+      # 📦 Step 4: Package build for Azure
       - run: zip -r ../artifact.zip . -x "node_modules/.cache/*"
 
+      # 🚀 Step 5: Deploy to Azure Web App
       - uses: azure/webapps-deploy@v3
         with:
-          app-name: YOUR_APP_NAME
-          # slot-name: staging          # optional
+          app-name: asp-piccadilly-prod-www   # 👈 Your Azure app name
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: artifact.zip
